@@ -1,0 +1,29 @@
+import sys
+
+def solve():
+    try:
+        n = int(sys.stdin.readline())
+    except ValueError:
+        return
+    l = []
+    for _ in range(n):
+        line = sys.stdin.readline().strip().split()
+        if not line:
+            continue
+        command = line[0]
+        args = line[1:]
+        if command == "print":
+            print(l)
+        elif command == "insert":
+            l.insert(int(args[0]), int(args[1]))
+        elif command == "remove":
+            l.remove(int(args[0]))
+        elif command == "append":
+            l.append(int(args[0]))
+        elif command == "sort":
+            l.sort()
+        elif command == "pop":
+            l.pop()
+        elif command == "reverse":
+            l.reverse()
+solve()
